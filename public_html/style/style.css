@@ -1,0 +1,26 @@
+html, body {
+  height: 100%;
+}
+
+#wrap {
+  min-height: 100%;
+}
+
+#main {
+  overflow:auto;
+  padding-bottom:150px; /* this needs to be bigger than footer height*/
+}
+
+#result {
+  font-family: Consolas, Lucida Console, monospace;
+}
+
+.footer {
+  position: relative;
+  margin-top: -45px; /* negative value of footer height */
+  height: 45px;
+  clear:both;
+  padding-top:15px;
+  text-align:center;
+  background:#eee;
+} 
