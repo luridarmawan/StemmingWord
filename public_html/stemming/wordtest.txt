@@ -1,0 +1,306 @@
+
+diserahterimakan=serahterima
+ketidakhadiran=tidak hadir
+penandatanganan=tanda tangan
+diperjualbelikan=jual beli
+ketidakpuasan=tidak puas
+dimainkan=main
+dipukulkan=pukul
+dipermainkan=main
+memulangkan=pulang
+
+seorang=orang
+seseorang=orang
+mei=mei
+bui=bui
+
+# prevent overstemming
+nilai=nilai
+
+# lah|kah|tah|pun
+hancurlah=hancur
+benarkah=benar
+siapapun=siapa
+
+# ku|mu|nya
+kamarku=kamar
+bukumu=buku
+bajunya=baju
+
+# i|kan|an
+hantui=hantu
+belikan=beli
+padamkan=padam
+jualan=jual
+
+# plain prefix
+dibuang=buang
+kesakitan=sakit
+sesuap=suap
+
+# berV -> ber-V
+beradu=adu
+
+# be-rV
+berambut=rambut
+
+# berCAP -> ber-CAP
+bersuara=suara
+
+# berCAerV -> ber-CAerV where C neq 'r'
+berdaerah=daerah
+
+# belajar -> bel-ajar
+belajar=ajar
+
+# beC1erC2 -> be-C1erC2 where C1 neq {'r'|'l'}
+bekerja=kerja
+beternak=ternak
+
+# terV -> ter-V
+terasing=asing
+
+# terV -> te-rV
+teraup=raup
+
+# terCerV -> ter-CerV where C neq 'r'
+tergerak=gerak
+
+# terCP -> ter-CP where C neq 'r' and P neq 'er'
+terpuruk=puruk
+
+# teC1erC2 -> te-C1erC2 where C1 neq 'r'
+teterbang=terbang
+
+# me{l|r|w|y}V -> me-{l|r|w|y}V
+melipat=lipat
+meringkas=ringkas
+mewarnai=warna
+meyakinkan=yakin
+
+# mem{b|f|v} -> mem-{b|f|v}
+membangun=bangun
+memfitnah=fitnah
+memvonis=vonis
+
+# mempe{r|l} -> mem-pe
+memperbarui=baru
+mempelajari=ajar
+
+# mem{rV|V} -> mem{rV|V}
+meminum=minum
+
+# mem{rV|V} -> me-p{rV|V}
+memukul=pukul
+
+# men{c|d|j|z} -> men-{c|d|j|z}
+mencinta=cinta
+mendua=dua
+menjauh=jauh
+menziarah=ziarah
+
+# men{V} -> me-n{V}
+menuklir=nuklir
+
+# men{V} -> me-t{V}
+menangkap=tangkap
+
+# meng{g|h|q} -> meng-{g|h|q}
+menggila=gila
+menghajar=hajar
+mengqasar=qasar
+
+# mengV -> meng-V
+mengudara=udara
+
+# mengV -> meng-kV
+mengupas=kupas
+
+# menyV -> meny-sV
+menyuarakan=suara
+
+# mempV -> mem-pV where V neq 'e'
+mempopulerkan=populer
+
+# pe{w|y}V -> pe-{w|y}V
+pewarna=warna
+peyoga=yoga
+
+# perV -> per-V
+peradilan=adil
+
+# perV -> pe-rV
+perumahan=rumah
+
+# perCAP -> per-CAP where C neq 'r' and P neq 'er'
+permuka=muka
+
+# perCAerV -> per-CAerV where C neq 'r'
+perdaerah=daerah
+
+# pem{b|f|v} -> pem-{b|f|v}
+pembangun=bangun
+pemfitnah=fitnah
+pemvonis=vonis
+
+# pem{rV|V} -> pe-m{rV|V}
+peminum=minum
+
+# pem{rV|V} -> pe-p{rV|V}
+pemukul=pukul
+
+# men{c|d|j|z} -> men-{c|d|j|z}
+pencinta=cinta
+pendahulu=dahulu
+penjarah=jarah
+penziarah=ziarah
+
+# pen{V} -> pe-n{V}
+penasihat=nasihat
+
+# pen{V} -> pe-t{V}
+penangkap=tangkap
+
+# peng{g|h|q} -> peng-{g|h|q}
+penggila=gila
+penghajar=hajar
+pengqasar=qasar
+
+# pengV -> peng-V
+pengudara=udara
+
+# pengV -> peng-kV
+pengupas=kupas
+
+# penyV -> peny-sV
+penyuara=suara
+
+# pelV -> pe-lV except pelajar -> ajar
+pelajar=ajar
+pelabuhan=labuh
+
+# peCP -> pe-CP where C neq {r|w|y|l|m|n} and P neq 'er'
+petarung=tarung
+
+# terC1erC2 -> ter-C1erC2 where C1 neq 'r'
+terpercaya=percaya
+
+# peC1erC2 -> pe-C1erC2 where C1 neq {r|w|y|l|m|n}
+pekerja=kerja
+peserta=serta
+
+# CS other
+mempengaruhi=pengaruh
+mengkritik=kritik
+
+# CS adjusting rule precedence
+bersekolah=sekolah
+bertahan=tahan
+mencapai=capai
+dimulai=mulai
+petani=tani
+terabai=abai
+
+# ECS
+mensyaratkan=syarat
+mensyukuri=syukur
+mengebom=bom
+mempromosikan=promosi
+memproteksi=proteksi
+memprediksi=prediksi
+pengkajian=kaji
+pengebom=bom
+
+# ECS loop pengembalian akhiran
+bersembunyi=sembunyi
+bersembunyilah=sembunyi
+pelanggan=langgan
+pelaku=laku
+pelangganmukah=langgan
+pelakunyalah=laku
+
+perbaikan=baik
+kebaikannya=baik
+bisikan=bisik
+menerangi=terang
+berimanlah=iman
+
+memuaskan=puas
+berpelanggan=langgan
+bermakanan=makan
+berpengalaman=alam
+bersinggungan=singgung
+
+# CC (Modified ECS)
+menyala=nyala
+menyanyikan=nyanyi
+menyatakannya=nyata
+
+penyanyi=nyanyi
+penyawaan=nyawa
+
+# CC infix
+rerata=rata
+lelembut=lembut
+lemigas=ligas
+kinerja=kerja
+
+#plurals
+buku-buku=buku
+berbalas-balasan=balas
+bolak-balik=bolak-balik
+
+# combination of prefix + suffix
+bertebaran=tebar
+terasingkan=asing
+membangunkan=bangun
+mencintai=cinta
+menduakan=dua
+menjauhi=jauh
+menggilai=gila
+pembangunan=bangun
+
+# recursively remove prefix
+memberdayakan=daya
+persemakmuran=makmur
+keberuntunganmu=untung
+kesepersepuluhnya=sepuluh
+
+# combination of suffixes
+bukumukah=buku
+miliknyalah=milik
+kulitkupun=kulit
+berikanku=beri
+sakitimu=sakit
+beriannya=beri
+kasihilah=kasih
+
+
+# other
+perekonomian=ekonomi
+menahan=tahan
+peranan=peran
+memberikan=beri
+medannya=medan
+mentaati=taat
+meniru-nirukan=tiru
+menyepak-nyepak=sepak
+melewati=lewat
+menganga=nganga
+menggunakan=guna
+kupukul=pukul
+kauhajar=hajar
+kuasa-Mu=kuasa
+malaikat-malaikat-Nya=malaikat
+nikmat-Ku=nikmat
+allah-lah=allah
+
+# adopted foreign suffixes
+idealis=ideal
+idealisme=ideal
+finalisasi=final
+
+# return the word if not found in the dictionary
+marwan=marwan
+subarkah=subarkah
+
