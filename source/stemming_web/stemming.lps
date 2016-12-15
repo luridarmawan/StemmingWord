@@ -3,43 +3,42 @@
   <ProjectSession>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="17">
+    <Units Count="22">
       <Unit0>
         <Filename Value="stemming.lpr"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="58" Y="6"/>
-        <UsageCount Value="33"/>
+        <CursorPos X="87" Y="26"/>
+        <UsageCount Value="43"/>
       </Unit0>
       <Unit1>
         <Filename Value="routes.pas"/>
         <IsPartOfProject Value="True"/>
         <CursorPos X="74" Y="21"/>
-        <UsageCount Value="33"/>
+        <UsageCount Value="43"/>
         <Loaded Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="main.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="53"/>
-        <CursorPos X="12" Y="87"/>
-        <UsageCount Value="33"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="9"/>
+        <CursorPos X="36" Y="9"/>
+        <UsageCount Value="43"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="controller/stemtest_controller.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="24"/>
-        <CursorPos X="47" Y="47"/>
-        <UsageCount Value="32"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="34" Y="74"/>
+        <UsageCount Value="42"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="../../../FastPlaz/source/core/docs/README-new api project.txt"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
         <DefaultSyntaxHighlighter Value="None"/>
       </Unit4>
       <Unit5>
@@ -47,22 +46,20 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="50"/>
         <CursorPos X="133" Y="6"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit5>
       <Unit6>
         <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/library/serialize_lib.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="136"/>
         <CursorPos X="132" Y="11"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit6>
       <Unit7>
         <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/library/common.pas"/>
-        <EditorIndex Value="5"/>
-        <TopLine Value="697"/>
-        <CursorPos Y="723"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="39"/>
         <UsageCount Value="10"/>
-        <Loaded Value="True"/>
       </Unit7>
       <Unit8>
         <Filename Value="/usr/local/share/fpcsrc/packages/fcl-web/src/base/httpdefs.pp"/>
@@ -70,23 +67,21 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="902"/>
         <CursorPos Y="913"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit8>
       <Unit9>
         <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/systems/fastplaz_handler.pas"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="341"/>
-        <CursorPos X="39" Y="373"/>
-        <UsageCount Value="10"/>
-        <Loaded Value="True"/>
+        <CursorPos X="47" Y="366"/>
+        <UsageCount Value="9"/>
       </Unit9>
       <Unit10>
         <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/library/stemmingnazief_lib.pas"/>
-        <EditorIndex Value="4"/>
-        <TopLine Value="453"/>
-        <CursorPos X="56" Y="483"/>
-        <UsageCount Value="13"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="57"/>
+        <CursorPos X="52" Y="81"/>
+        <UsageCount Value="18"/>
         <Loaded Value="True"/>
       </Unit10>
       <Unit11>
@@ -94,33 +89,33 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="16"/>
         <CursorPos X="5" Y="37"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit11>
       <Unit12>
         <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/systems/theme_controller.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="57" Y="21"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit12>
       <Unit13>
         <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/library/language_lib.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="121" Y="20"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit13>
       <Unit14>
         <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/library/database_lib.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="28"/>
         <CursorPos Y="47"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit14>
       <Unit15>
         <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/library/logutil_lib.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="89"/>
         <CursorPos X="21" Y="127"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit15>
       <Unit16>
         <Filename Value="/usr/local/share/fpcsrc/packages/fcl-json/src/jsonconf.pp"/>
@@ -128,83 +123,124 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="68"/>
         <CursorPos X="15" Y="88"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit16>
+      <Unit17>
+        <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/library/stemmingnaziefredis_lib.pas"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="4"/>
+        <CursorPos X="85" Y="41"/>
+        <UsageCount Value="15"/>
+        <Loaded Value="True"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/library/redis_lib.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="205"/>
+        <CursorPos Y="239"/>
+        <UsageCount Value="14"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/systems/redis_controller.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="45"/>
+        <CursorPos Y="62"/>
+        <UsageCount Value="10"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="/usr/local/share/fpcsrc/packages/rtl-extra/src/unix/sockets.pp"/>
+        <UnitName Value="Sockets"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="5" Y="20"/>
+        <UsageCount Value="9"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="/usr/local/share/fpcsrc/packages/hash/src/md5.pp"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="28"/>
+        <CursorPos X="3" Y="49"/>
+        <UsageCount Value="10"/>
+      </Unit21>
     </Units>
+    <OtherDefines Count="1">
+      <Define0 Value="UseCThreads"/>
+    </OtherDefines>
     <JumpHistory Count="19" HistoryIndex="18">
       <Position1>
-        <Filename Value="routes.pas"/>
-        <Caret Line="21" Column="74"/>
+        <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/library/stemmingnaziefredis_lib.pas"/>
+        <Caret Line="64" Column="42" TopLine="34"/>
       </Position1>
       <Position2>
-        <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/systems/fastplaz_handler.pas"/>
-        <Caret Line="301" Column="15" TopLine="280"/>
+        <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/library/stemmingnaziefredis_lib.pas"/>
+        <Caret Line="66" Column="26" TopLine="36"/>
       </Position2>
       <Position3>
-        <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/systems/fastplaz_handler.pas"/>
+        <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/library/stemmingnaziefredis_lib.pas"/>
+        <Caret Line="67" Column="20" TopLine="37"/>
       </Position3>
       <Position4>
-        <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/systems/fastplaz_handler.pas"/>
-        <Caret Line="332" Column="49" TopLine="298"/>
+        <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/library/stemmingnaziefredis_lib.pas"/>
+        <Caret Line="64" TopLine="34"/>
       </Position4>
       <Position5>
-        <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/systems/fastplaz_handler.pas"/>
-        <Caret Line="403" Column="14" TopLine="370"/>
+        <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/library/stemmingnaziefredis_lib.pas"/>
+        <Caret Line="66" Column="42" TopLine="34"/>
       </Position5>
       <Position6>
-        <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/systems/fastplaz_handler.pas"/>
-        <Caret Line="441" Column="12" TopLine="408"/>
+        <Filename Value="controller/stemtest_controller.pas"/>
+        <Caret Line="74" TopLine="61"/>
       </Position6>
       <Position7>
-        <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/systems/fastplaz_handler.pas"/>
-        <Caret Line="825" Column="12" TopLine="791"/>
+        <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/library/stemmingnaziefredis_lib.pas"/>
+        <Caret Line="30" Column="15" TopLine="9"/>
       </Position7>
       <Position8>
-        <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/systems/fastplaz_handler.pas"/>
-        <Caret Line="842" Column="12" TopLine="808"/>
+        <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/library/stemmingnazief_lib.pas"/>
+        <Caret Line="181" Column="10" TopLine="155"/>
       </Position8>
       <Position9>
-        <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/systems/fastplaz_handler.pas"/>
+        <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/library/stemmingnazief_lib.pas"/>
+        <Caret Line="30"/>
       </Position9>
       <Position10>
-        <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/systems/fastplaz_handler.pas"/>
-        <Caret Line="332" Column="49" TopLine="298"/>
+        <Filename Value="controller/stemtest_controller.pas"/>
+        <Caret Line="93" Column="43" TopLine="65"/>
       </Position10>
       <Position11>
-        <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/systems/fastplaz_handler.pas"/>
-        <Caret Line="403" Column="14" TopLine="370"/>
+        <Filename Value="controller/stemtest_controller.pas"/>
+        <Caret Line="31" TopLine="18"/>
       </Position11>
       <Position12>
-        <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/systems/fastplaz_handler.pas"/>
-        <Caret Line="441" Column="12" TopLine="408"/>
+        <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/library/stemmingnazief_lib.pas"/>
+        <Caret Line="70" Column="14" TopLine="50"/>
       </Position12>
       <Position13>
-        <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/systems/fastplaz_handler.pas"/>
-        <Caret Line="817" Column="59" TopLine="791"/>
+        <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/library/stemmingnaziefredis_lib.pas"/>
+        <Caret Line="78" Column="29" TopLine="39"/>
       </Position13>
       <Position14>
-        <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/systems/fastplaz_handler.pas"/>
-        <Caret Line="82" Column="41" TopLine="61"/>
+        <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/library/stemmingnaziefredis_lib.pas"/>
+        <Caret Line="77" Column="50" TopLine="40"/>
       </Position14>
       <Position15>
-        <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/systems/fastplaz_handler.pas"/>
-        <Caret Line="83" Column="10" TopLine="61"/>
+        <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/library/stemmingnaziefredis_lib.pas"/>
+        <Caret Line="78" Column="21" TopLine="40"/>
       </Position15>
       <Position16>
-        <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/systems/fastplaz_handler.pas"/>
-        <Caret Line="309" Column="16" TopLine="275"/>
+        <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/library/stemmingnaziefredis_lib.pas"/>
+        <Caret Line="41" Column="85"/>
       </Position16>
       <Position17>
-        <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/systems/fastplaz_handler.pas"/>
-        <Caret Line="310" Column="16" TopLine="276"/>
+        <Filename Value="controller/stemtest_controller.pas"/>
+        <Caret Line="4" Column="30"/>
       </Position17>
       <Position18>
-        <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/systems/fastplaz_handler.pas"/>
-        <Caret Line="311" Column="16" TopLine="277"/>
+        <Filename Value="controller/stemtest_controller.pas"/>
+        <Caret Line="21" Column="30"/>
       </Position18>
       <Position19>
-        <Filename Value="../../../FastPlaz/source/core/FastPlaz/src/systems/fastplaz_handler.pas"/>
-        <Caret Line="326" Column="9" TopLine="292"/>
+        <Filename Value="controller/stemtest_controller.pas"/>
+        <Caret Line="68" TopLine="38"/>
       </Position19>
     </JumpHistory>
   </ProjectSession>

@@ -16,6 +16,8 @@
       <EnableI18N LFM="False"/>
     </i18n>
     <VersionInfo>
+      <UseVersionInfo Value="True"/>
+      <AutoIncrementBuild Value="True"/>
       <StringTable ProductVersion=""/>
     </VersionInfo>
     <BuildModes Count="1">
@@ -70,6 +72,10 @@
       <ConfigFile>
         <ConfigFilePath Value="extra.cfg"/>
       </ConfigFile>
+      <CustomOptions Value="-dUseCThreads"/>
+      <OtherDefines Count="1">
+        <Define0 Value="UseCThreads"/>
+      </OtherDefines>
     </Other>
   </CompilerOptions>
   <Debugging>

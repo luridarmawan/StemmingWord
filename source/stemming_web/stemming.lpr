@@ -3,7 +3,12 @@ program stemming;
 {$mode objfpc}{$H+}
 
 uses
+  {$IFDEF UNIX}{$IFDEF UseCThreads}
+  cthreads,
+  {$ENDIF}{$ENDIF}
   fpcgi, sysutils, fastplaz_handler, common, main, routes, stemtest_controller;
+
+{$R *.res}
 
 begin
   Application.Title:='Stemming';

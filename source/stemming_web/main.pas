@@ -31,8 +31,9 @@ begin
   inherited CreateNew(AOwner, CreateMode);
   BeforeRequest := @BeforeRequestHandler;
 
-  Stemming:= TStemmingNazief.Create;
-  Stemming.LoadDictionaryFromFile( Config.GetValue( 'stemming/dictionary_file','dictionary.csv'));
+  Stemming := TStemmingNazief.Create;
+  Stemming.LoadDictionaryFromFile(Config.GetValue(
+    'stemming/dictionary_file', 'dictionary.csv'));
 end;
 
 destructor TMainModule.Destroy;
@@ -61,41 +62,40 @@ procedure TMainModule.Post;
 var
   authstring: string;
   body: string;
-  text, stemmed_text: string;
-  result : TStringList;
+  Text, stemmed_text: string;
+  Result: TStringList;
 begin
-  result := TStringList.Create;
+  Result := TStringList.Create;
 
   body := Request.Content;
 
-  text := _POST['text'];
-  stemmed_text:= Stemming.ParseSentence( text);
-  stemmed_text:= StringReplace(stemmed_text,#13,'',[rfReplaceAll]);
-  stemmed_text:= StringReplace(stemmed_text,#10,'',[rfReplaceAll]);
+  Text := _POST['text'];
+  stemmed_text := Stemming.ParseSentence(Text);
+  stemmed_text := StringReplace(stemmed_text, #13, '', [rfReplaceAll]);
+  stemmed_text := StringReplace(stemmed_text, #10, '', [rfReplaceAll]);
 
   authstring := Header['Authorization'];
 
 
-  result.Add('{');
-  result.Add('"code": 0,');
-  result.Add('"response": {');
-  result.Add('"text": '+stemmed_text+',');
-  result.Add('"time":"'+i2s(TimeUsage)+'ms"');
-  result.Add('}');
-  result.Add('}');
+  Result.Add('{');
+  Result.Add('"code": 0,');
+  Result.Add('"response": {');
+  Result.Add('"text": ' + stemmed_text + ',');
+  Result.Add('"time":"' + i2s(TimeUsage) + 'ms"');
+  Result.Add('}');
+  Result.Add('}');
 
   with TLogUtil.Create do
   begin
-    Add( text, 'stemming');
+    Add(Text, 'stemming');
     Free;
   end;
   //---
   CustomHeader['stemming_token'] := 'tototo';
-  Response.Content:= JsonFormatter( result.Text);
-  result.Free;
+  Response.Content := JsonFormatter(Result.Text);
+  Result.Free;
 end;
 
 
 
 end.
-

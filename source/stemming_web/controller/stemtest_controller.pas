@@ -1,11 +1,16 @@
 unit stemtest_controller;
 
 {$mode objfpc}{$H+}
+{$DEFINE STEMMING_WITH_REDISx}
 
 interface
 
 uses
+  {$IFDEF STEMMING_WITH_REDIS}
+  stemmingnaziefredis_lib,
+  {$ELSE}
   stemmingnazief_lib,
+  {$ENDIF}
   Classes, SysUtils, fpcgi, fpjson, HTTPDefs, fastplaz_handler, database_lib;
 
 type
@@ -14,7 +19,11 @@ type
 
   TStemtestModule = class(TMyCustomWebModule)
   private
+    {$IFDEF STEMMING_WITH_REDIS}
+    Stemming: TStemmingNaziefRedis;
+    {$ELSE}
     Stemming: TStemmingNazief;
+    {$ENDIF}
     function assertWord(TestWord, ComparisonWord: string): boolean;
   public
     constructor CreateNew(AOwner: TComponent; CreateMode: integer); override;
@@ -54,8 +63,13 @@ end;
 constructor TStemtestModule.CreateNew(AOwner: TComponent; CreateMode: integer);
 begin
   inherited CreateNew(AOwner, CreateMode);
+  {$IFDEF STEMMING_WITH_REDIS}
+  Stemming := TStemmingNaziefRedis.Create;
+  Stemming.LoadDictionaryFromRedis();
+  {$ELSE}
   Stemming := TStemmingNazief.Create;
   Stemming.LoadDictionaryFromFile( Config.GetValue( 'stemming/dictionary_file','dictionary.csv'));
+  {$ENDIF}
 end;
 
 destructor TStemtestModule.Destroy;
@@ -70,6 +84,7 @@ var
   wordtest: TStringList;
   i: integer;
 begin
+
   if not FileExists( 'wordtest.txt') then
   begin
     die( 'file "wordtest.txt" not exists.');
