@@ -32,8 +32,11 @@ begin
   BeforeRequest := @BeforeRequestHandler;
 
   Stemming := TStemmingNazief.Create;
+  Stemming.StandardWordCheck := True;
   Stemming.LoadDictionaryFromFile(Config.GetValue(
-    'stemming/dictionary_file', 'dictionary.csv'));
+    'stemming/dictionary_file', STEMMINGNAZIEF_DICTIONARY_FILE));
+  Stemming.LoadNonStandardWordFromFile(Config.GetValue(
+    'stemming/nonstandardword_file', WORD_NONSTANDARD_FILE));
 end;
 
 destructor TMainModule.Destroy;
@@ -80,6 +83,9 @@ begin
   Result.Add('{');
   Result.Add('"code": 0,');
   Result.Add('"response": {');
+  Result.Add('"word_count": ' + i2s(Stemming.WordCount) + ',');
+  Result.Add('"nonstandardword_count": ' + i2s(Stemming.NonStandardWordCount) + ',');
+  Result.Add('"unknownword_count": ' + i2s(Stemming.UnknownWordCount) + ',');
   Result.Add('"text": ' + stemmed_text + ',');
   Result.Add('"time":"' + i2s(TimeUsage) + 'ms"');
   Result.Add('}');
