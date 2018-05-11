@@ -17,7 +17,8 @@
     "error_redirect" : false
   },
   "stemming" : {
-    "dictionary_file" : "files/dictionary.csv"
+    "dictionary_file" : "files/dictionary.csv",
+    "nonstandardword_file" : "files/word-nonstandard.txt"
   },
   "database" : {
     "default" : {
