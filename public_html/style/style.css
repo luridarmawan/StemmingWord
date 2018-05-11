@@ -24,3 +24,10 @@ html, body {
   text-align:center;
   background:#eee;
 } 
+
+.red {
+  color: red;
+}
+.green {
+  color: green;
+}

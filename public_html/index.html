@@ -50,6 +50,10 @@
 		<div class="col-xs-1 "></div>
 		<div class="col-md-8 ">
 			
+			<figure class="highlight hide" id="result-text">
+				...
+			</figure>
+
 			<figure class="highlight hide" id="result">
 				...
 			</figure>
@@ -64,8 +68,7 @@
 		<div class="col-md-8 ">
 	<p><b>Stemming</b> adalah proses pemetaan dan penguraian bentuk dari suatu kata menjadi bentuk kata dasarnya . 
 	<br>Penggunaan <b>stemming</b> secara luas sudah biasa dilakukan di dalam <i>Information Retrieval</i> (pencarian informasi) untuk meningkatkan kualitas informasi yang didapatkan.</p>
-	<p><i>Stemming word</i> yang digunakan di sini berdasarkan Algoritma Nazief dan Adriani, 
-		<br>dibangun dengan menggunakan bahasa <a href="http://freepascal.org/" target="_blank"><b>pascal</b></a> khususnya framework <a href="http://www.fastplaz.com">FastPlaz</a>.</p>
+	<p><i>Stemming word</i> yang digunakan di sini berdasarkan Algoritma Nazief dan Adriani, dibangun dengan menggunakan bahasa <a href="http://freepascal.org/" target="_blank"><b>pascal</b></a> khususnya framework <a href="http://www.fastplaz.com">FastPlaz</a>.</p>
 	<p>
 		Beberapa variasi kata mungkin tidak terdeteksi dikarenakan banyak hal dan kondisi.
 		<br>belum termasuk sebagian kata-kata gaul maupun yang tidak gaul.
@@ -73,6 +76,20 @@
 	    </div>
     </div>
 </div>
+
+<div class="container-fluid ">
+	<div class="row">
+		<div class="col-xs-1 "></div>
+		<div class="col-md-8 ">
+			<p>Referensi:<ul>
+			<li>source: <a target="_blank" href="https://github.com/luridarmawan/StemmingWord">https://github.com/luridarmawan/StemmingWord</a></li>
+			<li><a target="_blank" href="https://medium.com/@luridarmawan/stemming-word-dalam-carik-da3b802038c8">Pengantar Stemming Word di dalam Carik</a></li>
+		</ul>
+			</p>
+	    </div>
+    </div>
+</div>
+
 
 </div>
 
@@ -96,6 +113,7 @@ jQuery(document).ready(function() {
 	jQuery('#stemmingform').submit(function() {
 		//event.preventDefault();
 
+		jQuery( '#result-text').html( '');
 		jQuery( '#result').html( '');
 		jQuery('#btnGo').attr("disabled", true);
 		jQuery('input#text').attr("disabled", true);
@@ -118,12 +136,37 @@ jQuery(document).ready(function() {
 				html = html + '<br>';
 			}
 
+			text = '';
+			for (var i = 0, len = stemmed_text.length; i < len; i++) {
+				item = stemmed_text[i];
+				s = item.word;
+				if (item.type == 0){
+					s = '<span class=red>' + s + '</span>';
+				}
+				if (item.non_standard == 'yes'){
+					s = '<span class=green>' + s + ' ('+item.original_word+')</span>';
+				}
+				text = text + ' ' + s;
+			}
+			if ((data.response.unknownword_count > 0)|(data.response.nonstandardword_count > 0)){
+				text = text + '<br><br><i>';
+				if (data.response.unknownword_count > 0){
+					text = text + ' Ada ' + data.response.unknownword_count + ' kata tidak dikenal.';
+				}
+				if (data.response.nonstandardword_count > 0){
+					text = text + ' Ada ' + data.response.nonstandardword_count + ' kata tidak baku.';
+				}
+				text = text + '<br></i>';
+			}
+
 			html = html + '<br><br> time:' + data.response.time;
 			html = str + '<br><br>' + html;
 
+			jQuery( '#result-text').html( text);
 			jQuery( '#result').html( html);
 			jQuery('#btnGo').attr("disabled", false);
 			jQuery('input#text').attr("disabled", false);
+			jQuery( '#result-text').removeClass('hide');
 			jQuery( '#result').removeClass('hide');
 			jQuery('#text').focus();
 		})
