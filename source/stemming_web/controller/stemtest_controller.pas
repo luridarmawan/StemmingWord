@@ -41,6 +41,7 @@ function TStemtestModule.assertWord(TestWord, ComparisonWord: string): boolean;
 var
   stemmed_word: string;
 begin
+  Result := False;
   stemmed_word := Stemming.ParseWord(TestWord);
   if stemmed_word <> ComparisonWord then
   begin
@@ -68,7 +69,7 @@ begin
   Stemming.LoadDictionaryFromRedis();
   {$ELSE}
   Stemming := TStemmingNazief.Create;
-  Stemming.LoadDictionaryFromFile( Config.GetValue( 'stemming/dictionary_file','dictionary.csv'));
+  Stemming.LoadDictionaryFromFile( string(Config.GetValue( 'stemming/dictionary_file','dictionary.csv')));
   {$ENDIF}
 end;
 

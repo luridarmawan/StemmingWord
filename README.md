@@ -103,6 +103,9 @@ Pengujian bisa dilakukan dengan API Test Tools, seperti PostMan, Fortress, Mocky
 
 text = text yang akan distemming.
 
+
+**Test dengan Postman**
+
 ![postname](assets/postman-input.png)
 
 **Contoh Response**
@@ -142,11 +145,19 @@ text = text yang akan distemming.
         "score" : "0"
       }
     ],
-    "time" : "42ms"
+    "time" : "16ms"
   }
 }
 ```
 
+**Test dengan CURL**
+
+Pengujian bisa juga dilakukan melalui *console/terminal* dengan perintah CURL.
+Contohnya seperti ini:
+
+```
+curl http://urlanda -X POST -d 'text=hurup pertama adalah a'
+```
 
 ## Demo
 
