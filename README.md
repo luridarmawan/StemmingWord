@@ -1,6 +1,6 @@
 **Stemming Word dengan menggunakan pascal**
 
-[http://stemming.carik.id/](http://stemming.carik.id/)
+[https://luridarmawan.github.io/StemmingWord/](https://luridarmawan.github.io/StemmingWord/)
 ***
 
 **Stemming** adalah proses pemetaan dan penguraian bentuk dari suatu kata menjadi bentuk kata dasarnya. Stemming sebagai terapan yang erat dalam [Natural Language Processing](https://medium.com/@luridarmawan/natural-language-processing-nlp-sederhana-dari-carik-bot-78952b618695) sangat berguna bagi Anda yang mendalami tools-tools seperti *Translation*, *Summarization* bahkan juga untuk [ChatBot](http://www.carik.id/) seperti [Carik](http://www.carik.id/).
@@ -161,4 +161,4 @@ curl http://urlanda -X POST -d 'text=hurup pertama adalah a'
 
 ## Demo
 
-Live demo tools ini bisa anda akses dari halaman [Carik Stemming Tools](https://stemming.carik.id/)
+Live demo tools ini bisa anda akses dari halaman [Carik Stemming Tools](https://luridarmawan.github.io/StemmingWord/)
