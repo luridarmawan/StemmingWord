@@ -1,1 +1,182 @@
-Stemming Word
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Stemming Word with FastPlaz</title>
+<meta name="description" content="Stemming Word with FastPlaz">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+<link rel='stylesheet' id='fastplaz-style-css'  href='style/bootstrap.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='fastplaz-style-css'  href='style/docs.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='fastplaz-style-css'  href='style/style.css' type='text/css' media='all' />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Stemming Word with FastPlaz" />
+<meta property="og:site_name" content="FastPlaz" />
+<meta property="og:description" content="Stemming Word with FastPlaz" />
+<meta property="og:image" content="https://www.fastplaz.com/logo.png" />
+</head>
+<body>
+
+<div id="wrap">
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12 ">
+			<center><h1>Stemming Word</h1></center>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<form id="stemmingform" action="/stemming/" method="POST" class="form-inlinex">
+			  <div class="form-group col-sm-10">
+			    <input type="text" id="text" class="form-control" placeholder="masukkan kalimat yang akan di stemming." value="">
+			  </div>
+			  <div class="form-group col-sm-2">
+			    <button type="submit" class="btn btn-success" id="btnGo">Go</button>
+			  </div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid ">
+	<div class="row">
+		<div class="col-xs-1 "></div>
+		<div class="col-md-8 ">
+			
+			<figure class="highlight hide" id="result-text">
+				...
+			</figure>
+
+			<figure class="highlight hide" id="result">
+				...
+			</figure>
+		</div>
+		<div class="col-md-1 "></div>
+	</div>
+</div>
+
+<div class="container-fluid ">
+	<div class="row">
+		<div class="col-xs-1 "></div>
+		<div class="col-md-8 ">
+	<p><b>Stemming</b> adalah proses pemetaan dan penguraian bentuk dari suatu kata menjadi bentuk kata dasarnya . 
+	<br>Penggunaan <b>stemming</b> secara luas sudah biasa dilakukan di dalam <i>Information Retrieval</i> (pencarian informasi) untuk meningkatkan kualitas informasi yang didapatkan.</p>
+	<p><i>Stemming word</i> yang digunakan di sini berdasarkan Algoritma Nazief dan Adriani, dibangun dengan menggunakan bahasa <a href="http://freepascal.org/" target="_blank"><b>pascal</b></a> khususnya framework <a href="https://www.fastplaz.com">FastPlaz</a>.</p>
+	<p>
+		Beberapa variasi kata mungkin tidak terdeteksi dikarenakan banyak hal dan kondisi.
+		<br>belum termasuk sebagian kata-kata gaul maupun yang tidak gaul.
+	</p>
+	    </div>
+    </div>
+</div>
+
+<div class="container-fluid ">
+	<div class="row">
+		<div class="col-xs-1 "></div>
+		<div class="col-md-8 ">
+			<p>Referensi:<ul>
+			<li>source: <a target="_blank" href="https://github.com/luridarmawan/StemmingWord">https://github.com/luridarmawan/StemmingWord</a></li>
+			<li><a target="_blank" href="https://medium.com/@luridarmawan/stemming-word-dalam-carik-da3b802038c8">Pengantar Stemming Word di dalam Carik</a></li>
+		</ul>
+			</p>
+	    </div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">Enhanced by <a href="https://www.fastplaz.com">FastPlaz</a></footer>
+
+<script type='text/javascript' src='js/jquery.js?ver=1.11.0'></script>
+<script type='text/javascript' src='js/bootstrap.min.js'></script>
+
+<script type='text/javascript' > 
+url = 'https://public-nlp.carik.id/v1/stemming?t=';
+
+function showResponse(responseText, statusText, xhr, $form)  {
+	alert( 'response');
+}
+
+jQuery(document).ready(function() {
+	var options = {
+		dataType: 'json',
+		success: showResponse
+	}
+	jQuery('#stemmingform').submit(function() {
+		//event.preventDefault();
+
+		jQuery( '#result-text').html( '');
+		jQuery( '#result').html( '');
+		jQuery('#btnGo').attr("disabled", true);
+		jQuery('input#text').attr("disabled", true);
+		text_value = jQuery('#text').val();
+		if (text_value.length === 0){
+			jQuery('#text').focus();
+			return false;
+		}
+		var timestamp = new Date().getTime();
+		var posting = jQuery.post(url+timestamp, { text:text_value});
+
+		posting.done(function(data) {
+			stemmed_text = data.response.text;
+			html = '';
+			str = '>>';
+			for (var i = 0, len = stemmed_text.length; i < len; i++) {
+				item = stemmed_text[i];
+				str = str + ' ' + item.word;
+				html = html + '- ' + item.word + ' ('+item.wordtype+','+item.type+','+item.score+')';
+				html = html + '<br>';
+			}
+
+			text = '';
+			for (var i = 0, len = stemmed_text.length; i < len; i++) {
+				item = stemmed_text[i];
+				s = item.word;
+				if (item.type == 0){
+					s = '<span class=red>' + s + '</span>';
+				}
+				if (item.non_standard == 'yes'){
+					s = '<span class=green>' + s + ' ('+item.original_word+')</span>';
+				}
+				text = text + ' ' + s;
+			}
+			if ((data.response.unknownword_count > 0)|(data.response.nonstandardword_count > 0)){
+				text = text + '<br><br><i>';
+				if (data.response.unknownword_count > 0){
+					text = text + ' Ada ' + data.response.unknownword_count + ' kata tidak dikenal.';
+				}
+				if (data.response.nonstandardword_count > 0){
+					text = text + ' Ada ' + data.response.nonstandardword_count + ' kata tidak baku.';
+				}
+				text = text + '<br></i>';
+			}
+
+			html = html + '<br><br> time:' + data.response.time;
+			html = str + '<br><br>' + html;
+
+			jQuery( '#result-text').html( text);
+			jQuery( '#result').html( html);
+			jQuery('#btnGo').attr("disabled", false);
+			jQuery('input#text').attr("disabled", false);
+			jQuery( '#result-text').removeClass('hide');
+			jQuery( '#result').removeClass('hide');
+			jQuery('#text').focus();
+		})
+
+		return false;
+	});
+
+	jQuery('#text').focus();
+}); 
+
+</script>
+</body>
+</html>
