@@ -169,6 +169,11 @@ jQuery(document).ready(function() {
 			jQuery( '#result-text').removeClass('hide');
 			jQuery( '#result').removeClass('hide');
 			jQuery('#text').focus();
+
+			gtag('event', 'click', {
+				'event_category' : 'stemming',
+				'event_label': text_value
+			});
 		})
 
 		return false;
