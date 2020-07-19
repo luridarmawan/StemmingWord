@@ -50,6 +50,10 @@
 		<div class="col-xs-1 "></div>
 		<div class="col-md-8 ">
 			
+			<figure class="highlight hide" id="suggestion">
+				...
+			</figure>
+
 			<figure class="highlight hide" id="result-text">
 				...
 			</figure>
@@ -99,7 +103,8 @@
 <script type='text/javascript' src='js/bootstrap.min.js'></script>
 
 <script type='text/javascript' > 
-url = 'https://public-nlp.carik.id/v1/stemming?t=';
+stemmingUrl = 'https://public-nlp.carik.id/v1/stemming?t=';
+suggestionUrl = 'https://public-nlp.carik.id/tools/text/suggestion?t=';
 
 function showResponse(responseText, statusText, xhr, $form)  {
 	alert( 'response');
@@ -115,6 +120,9 @@ jQuery(document).ready(function() {
 
 		jQuery( '#result-text').html( '');
 		jQuery( '#result').html( '');
+		jQuery( '#suggestion').addClass('hide');
+		jQuery( '#result').addClass('hide');
+		jQuery( '#result-text').addClass('hide');
 		jQuery('#btnGo').attr("disabled", true);
 		jQuery('input#text').attr("disabled", true);
 		text_value = jQuery('#text').val();
@@ -123,7 +131,35 @@ jQuery(document).ready(function() {
 			return false;
 		}
 		var timestamp = new Date().getTime();
-		var posting = jQuery.post(url+timestamp, { text:text_value});
+
+		//suggestion
+		url = suggestionUrl + timestamp + '&text=' + text_value;
+		suggestionProcess = jQuery.get(url);
+
+		url = stemmingUrl+timestamp;
+		var posting = jQuery.post(url, { text:text_value});
+
+		suggestionProcess.done(function(data) {
+			if (data.result.suggestions === undefined){
+				return;
+			}
+			if (data.result.suggestions.length === 0){
+				return;
+			}
+			html = "<b>Saran koreksi:</b>\n<br>";
+			Object.keys(data.result.suggestions).forEach(el => {
+				console.log(data.result.suggestions[el]);
+				html = html + el +': ';
+				word = "";
+				data.result.suggestions[el].forEach(el2 => {
+					word = word + el2 + ', ';
+				});
+
+				html = html + word + '<br>';
+			});
+			jQuery( '#suggestion').html( html);
+			jQuery( '#suggestion').removeClass('hide');
+		});
 
 		posting.done(function(data) {
 			stemmed_text = data.response.text;
