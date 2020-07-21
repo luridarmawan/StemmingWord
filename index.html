@@ -34,8 +34,11 @@
 	<div class="row">
 		<div class="col-md-12">
 			<form id="stemmingform" action="/stemming/" method="POST" class="form-inlinex">
-			  <div class="form-group col-sm-10">
+			  <div class="form-group col-sm-7">
 			    <input type="text" id="text" class="form-control" placeholder="masukkan kalimat yang akan di stemming." value="">
+			  </div>
+			  <div class="form-group col-sm-3">
+			    <input type="text" id="reserved" class="form-control" placeholder="Reserved word dipisahkan tanda koma" value="">
 			  </div>
 			  <div class="form-group col-sm-2">
 			    <button type="submit" class="btn btn-success" id="btnGo">Go</button>
@@ -120,6 +123,7 @@ jQuery(document).ready(function() {
 		jQuery('#btnGo').attr("disabled", true);
 		jQuery('input#text').attr("disabled", true);
 		text_value = jQuery('#text').val();
+		reservedWord = jQuery('#reserved').val();
 		if (text_value.length === 0){
 			jQuery('#text').focus();
 			return false;
@@ -127,7 +131,7 @@ jQuery(document).ready(function() {
 		var timestamp = new Date().getTime();
 
 		//suggestion
-		url = suggestionUrl + timestamp + '&text=' + text_value;
+		url = suggestionUrl + timestamp + '&reserved=' + reservedWord + '&text=' + text_value;
 		suggestionProcess = jQuery.get(url);
 
 		url = stemmingUrl+timestamp;
@@ -146,11 +150,13 @@ jQuery(document).ready(function() {
 				html = html + el +': ';
 				word = "";
 				data.result.suggestions[el].forEach(el2 => {
-					word = word + el2 + ', ';
+					word = word + el2.word + '('+el2.score+')' + ', ';
 				});
 
 				html = html + word + '<br>';
 			});
+			html = html + "<br><b>Kemungkinan koreksi:</b>";
+			html = html + "<br>" + data.result.text;
 			jQuery( '#suggestion').html( html);
 			jQuery( '#suggestion').removeClass('hide');
 		});
